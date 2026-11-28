@@ -1,6 +1,24 @@
+
 @OrderApi_HostAddress = http://localhost:5208
 
-GET {{OrderApi_HostAddress}}/weatherforecast/
+### 1. Kiem tra API
+GET {{OrderApi_HostAddress}}/weatherforecast
 Accept: application/json
 
-###
+### 2. Tao don hang
+POST {{OrderApi_HostAddress}}/orders
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "items": [
+    {
+      "productId": 1,
+      "quantity": 2
+    }
+  ]
+}
+
+### 3. Xem chi tiết đơn hàng
+GET {{OrderApi_HostAddress}}/orders/2
+Accept: application/json
